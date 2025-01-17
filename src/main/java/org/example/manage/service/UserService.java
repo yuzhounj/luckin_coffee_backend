@@ -1,5 +1,7 @@
 package org.example.manage.service;
 
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
 import org.example.manage.model.SecurityUser;
 import org.example.manage.model.User;
 import org.example.manage.repository.UserRepository;
@@ -66,7 +68,9 @@ public class UserService {
         return new ApiResponse<>(200, "登录成功", res);
     }
 
-
+    public List<User> getAllStudent(){
+        return userRepository.findAll();
+    }
 
     public User getStudentById(String id) {
         return userRepository.findById(Long.parseLong(id)).orElse(null);
