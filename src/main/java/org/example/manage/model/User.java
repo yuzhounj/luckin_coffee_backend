@@ -34,7 +34,7 @@ public class User {
     @Column(nullable = false)  // 姓名不能为空
     @Getter
     @Setter
-    private String name;
+    private String phone;
 
 
     @Enumerated(EnumType.STRING)  // 角色字段，存储为字符串
@@ -70,12 +70,12 @@ public class User {
         this.password = password;
     }
 
-    public String getName() {
-        return name;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public Role getRole() {

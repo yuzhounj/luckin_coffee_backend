@@ -4,6 +4,7 @@ package org.example.manage.controller;
 import org.example.manage.model.User;
 import org.example.manage.repository.UserRepository;
 import org.example.manage.service.UserService;
+import org.example.manage.utils.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +21,8 @@ public class UserController {
 
     // 注册用户
     @PostMapping("/register")
-    public Map<String,String> registerUser(@RequestBody Map<String,String>map) {
+    public ApiResponse<String> registerUser(@RequestBody Map<String,String>map) {
+
         return userService.register(map);
     }
 
@@ -30,24 +32,11 @@ public class UserController {
         return userService.login(map);
     }
 
-    @PostMapping("/getAllStudent")
-    public List<User> getAllStudent() {
-        return userService.getAllStudent();
-    }
 
-    @PostMapping("/delete")
-    public Map<String,String> delete(@RequestBody Map<String, String> map) {
-        return userService.delete(map.get("id"));
-    }
-
-    @PostMapping("/update")
-    public Map<String,String> update(@RequestBody Map<String, String> map) {
-        return userService.update(map);
-    }
-
-    @PostMapping("/getStudent")
-    public User getStudentById(@RequestBody Map<String, String> map) {
-        return userService.getStudentById(map.get("id"));
+    @PostMapping("/getUser")
+    public ApiResponse<User> getStudentById(@RequestBody Map<String, String> map) {
+        User user = userService.getStudentById(map.get("id"));
+        return new ApiResponse<User>(200, "success", user);
     }
 
     //修改密码
