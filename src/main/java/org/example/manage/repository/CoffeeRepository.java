@@ -1,0 +1,12 @@
+package org.example.manage.repository;
+
+import org.example.manage.model.Coffee;
+import org.example.manage.model.Order;
+import org.example.manage.model.ShopCar;
+import org.example.manage.model.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface CoffeeRepository extends JpaRepository<Coffee, Long> {
+}

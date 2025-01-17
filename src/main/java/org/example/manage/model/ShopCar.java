@@ -125,5 +125,3 @@ public class ShopCar {
         this.temperature = temperature;
     }
 }
-
-
