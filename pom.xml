@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>org.example</groupId>
-	<artifactId>manage</artifactId>
+	<artifactId>luckincoffee</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>manage</name>
 	<description>manage</description>

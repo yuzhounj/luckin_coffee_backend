@@ -36,15 +36,6 @@ public class User {
     @Setter
     private String name;
 
-    @Column(nullable = false, unique = true)  // 学号必须唯一
-    @Getter
-    @Setter
-    private String studentId;
-
-    @Column(nullable = false)  // 院系不能为空
-    @Getter
-    @Setter
-    private String department;
 
     @Enumerated(EnumType.STRING)  // 角色字段，存储为字符串
     @Getter
@@ -54,8 +45,7 @@ public class User {
 
     // 枚举定义角色类型
     public enum Role {
-        TEACHER,  // 教师
-        STUDENT  // 学生
+        ADMIN, CUSTOMER
     }
 
     // Getters and Setters
@@ -63,9 +53,6 @@ public class User {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getUsername() {
         return username;
@@ -89,22 +76,6 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getStudentId() {
-        return studentId;
-    }
-
-    public void setStudentId(String studentId) {
-        this.studentId = studentId;
-    }
-
-    public String getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(String department) {
-        this.department = department;
     }
 
     public Role getRole() {
