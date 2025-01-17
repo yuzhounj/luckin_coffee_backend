@@ -78,12 +78,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!--        ioc的依赖-->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context</artifactId>
-			<version>5.3.19</version>
-		</dependency>
 		<!--        aop的依赖  aspectjweaver 和spring-asoect-->
 		<dependency>
 			<groupId>org.aspectj</groupId>
