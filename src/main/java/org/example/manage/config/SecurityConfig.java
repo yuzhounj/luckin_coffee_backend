@@ -33,11 +33,8 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())  // 禁用 CSRF
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/login", "/register").permitAll()  // 登录和注册页面不需要认证
-                        .requestMatchers(HttpMethod.OPTIONS).permitAll() // 其他请求都需要认证
-                        .anyRequest().authenticated()
-                ).addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);  // 添加JWT过滤器
-
+                        .anyRequest().permitAll()
+                );
         return http.build();
     }
 

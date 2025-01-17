@@ -45,36 +45,35 @@ public class UserService {
     }
 
     //登录
-    public Map<String,String> login(Map<String,String>map){
+    public ApiResponse<Map<String,String>> login(Map<String,String>map){
         Map<String,String> res = new HashMap<>();
         String phone = map.get("phone");
         User user = userRepository.findByPhone(phone);
         if (user == null) {
-            res.put("code","400");
-            res.put("message","用户不存在");
-            return res;
+            res.put("token","0000");
+            res.put("msg","用户不存在");
+            return new ApiResponse<>(400, "用户不存在", res);
         }
         if (!passwordEncoder.matches(map.get("password"), user.getPassword())) {
-            res.put("code","400");
-            res.put("message","密码错误");
-            return res;
+            res.put("token","0000");
+            res.put("msg","密码错误");
+            return new ApiResponse<>(400, "密码错误", res);
         }
-        res.put("code","200");
-        res.put("message","登录成功");
-        res.put("role", user.getRole().toString());
-        res.put("phone", user.getPhone());
-        res.put("username", user.getUsername());
-        res.put("id", user.getId().toString());
-        //把JWT返回给前端
         String token = JwtUtil.createJWT(user.getId().toString());
         res.put("token", token);
-        return res;
+        res.put("msg","OK");
+
+        return new ApiResponse<>(200, "登录成功", res);
     }
 
 
 
     public User getStudentById(String id) {
         return userRepository.findById(Long.parseLong(id)).orElse(null);
+    }
+
+    public User getStudentByPhone(String phone) {
+        return userRepository.findByPhone(phone);
     }
 
     public Map<String,String> changePassword(Map<String,String>map) {

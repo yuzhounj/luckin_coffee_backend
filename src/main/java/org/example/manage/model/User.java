@@ -31,7 +31,7 @@ public class User {
     @Setter
     private String password;
 
-    @Column(nullable = false)  // 姓名不能为空
+    @Column(nullable = false, unique = true) // 姓名不能为空
     @Getter
     @Setter
     private String phone;
