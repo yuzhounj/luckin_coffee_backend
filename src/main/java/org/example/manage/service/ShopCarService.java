@@ -33,7 +33,6 @@ public class ShopCarService {
         }
         return true;
     }
-
     public List<ShopCar> getShopCar() {
         return shopCarRepository.findAll();
     }

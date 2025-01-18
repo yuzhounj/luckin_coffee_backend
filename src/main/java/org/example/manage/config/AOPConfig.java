@@ -1,7 +1,7 @@
 package org.example.manage.config;
 
 
-import org.example.manage.aop.UserAspect;
+import org.example.manage.aop.ShopCarAspect;
 import org.springframework.context.annotation.*;
 
 @Configuration
@@ -10,7 +10,7 @@ import org.springframework.context.annotation.*;
 @EnableAspectJAutoProxy
 public class AOPConfig {
     @Bean
-    public UserAspect userAspect(){
-        return new UserAspect();
+    public ShopCarAspect shopCarAspect(){
+        return new ShopCarAspect();
     }
 }
