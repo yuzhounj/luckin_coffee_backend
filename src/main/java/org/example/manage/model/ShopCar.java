@@ -9,138 +9,119 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @Entity
-@Table(name = "shopcar")
+@Table(name = "shopCar")
 public class ShopCar {
-    //id: number;
-    //  resourcestr: string;
-    //  title: string;
-    //  price: number;
-    //  price2: number;
-    //  user: string;
-    //  sum: number;
-    //  cupshaped: string;
-    //  brix: string;
-    //  temperature: string;
+    // Getters and Setters
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+    @GeneratedValue(strategy = GenerationType.IDENTITY)  // 自增主键
+    @Getter
+    @Setter
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false)  // 登录用户名必须唯一
+    @Getter
+    @Setter
     private String resourcestr;
 
-    @Column(nullable = false)
-    private String title;
+    @Column(nullable = false)  // 密码不能为空
+    @Getter
+    @Setter
+    private Double price;
 
-    @Column(nullable = false)
-    private double price;
+    @Column(nullable = false) // 姓名不能为空
+    @Getter
+    @Setter
+    private Double price2;
 
-    @Column(nullable = false)
-    private double price2;
+    @Column(nullable = false)  // 密码不能为空
+    @Getter
+    @Setter
+    private Long sum;
 
-    @Column(nullable = false)
+    @Column(nullable = false)  // 密码不能为空
+    @Getter
+    @Setter
     private String user;
 
-    @Column(nullable = false)
-    private int sum;
+    @Column(nullable = false)  // 密码不能为空
+    @Getter
+    @Setter
+    private String title;
 
-    @Column(nullable = false)
+    @Column(nullable = false)  // 密码不能为空
+    @Getter
+    @Setter
     private String cupshaped;
 
-    @Column(nullable = false)
+    @Column(nullable = false)  // 密码不能为空
+    @Getter
+    @Setter
     private String brix;
 
-    @Column(nullable = false)
+    @Column(nullable = false)  // 密码不能为空
+    @Getter
+    @Setter
     private String temperature;
 
-    //getter and setter
-
-    public Long getId() {
+    public Long getId(){
         return id;
     }
-
-    public void setId(Long id) {
+    public void setId(Long id){
         this.id = id;
     }
-
-    public String getResourcestr() {
+    public String getResourcestr(){
         return resourcestr;
     }
-
-    public void setResourcestr(String resourcestr) {
+    public void setResourcestr(String resourcestr){
         this.resourcestr = resourcestr;
     }
-
-    public String getTitle() {
-        return title;
-    }
-
-
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public double getPrice() {
+    public Double getPrice(){
         return price;
     }
-
-    public void setPrice(double price) {
+    public void setPrice(Double price){
         this.price = price;
     }
-
-    public double getPrice2() {
+    public Double getPrice2(){
         return price2;
     }
-
-    public void setPrice2(double price2) {
+    public void setPrice2(Double price2){
         this.price2 = price2;
     }
-
-    public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
-    }
-
-    public int getSum() {
+    public Long getSum(){
         return sum;
     }
-
-    public void setSum(int sum) {
+    public void setSum(Long sum){
         this.sum = sum;
     }
-
-    public String getCupshaped() {
+    public String getUser(){
+        return user;
+    }
+    public void setUser(String user){
+        this.user = user;
+    }
+    public String getTitle(){
+        return title;
+    }
+    public void setTitle(String title){
+        this.title = title;
+    }
+    public String getCupshaped(){
         return cupshaped;
     }
-
-    public void setCupshaped(String cupshaped) {
+    public void setCupshaped(String cupshaped){
         this.cupshaped = cupshaped;
     }
-
-    public String getBrix() {
+    public String getBrix(){
         return brix;
     }
-
-    public void setBrix(String brix) {
+    public void setBrix(String brix){
         this.brix = brix;
     }
-
-    public String getTemperature() {
+    public String getTemperature(){
         return temperature;
     }
-
-    public void setTemperature(String temperature) {
+    public void setTemperature(String temperature){
         this.temperature = temperature;
     }
-
-
-
-
-
 }
